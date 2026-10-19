@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PasteBetween")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98bc2b64273a4a078823684e566bfd6a5d1efd45")]
 [assembly: System.Reflection.AssemblyProductAttribute("PasteBetween")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PasteBetween")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

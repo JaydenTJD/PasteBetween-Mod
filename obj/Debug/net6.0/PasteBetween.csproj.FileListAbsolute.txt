@@ -102,16 +102,15 @@ C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\AsmResolver.DotNet.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\AsmResolver.PE.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\AsmResolver.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Il2CppInterop.Generator.dll
+C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Iced.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Microsoft.Diagnostics.Runtime.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Mono.Cecil.Mdb.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Mono.Cecil.Pdb.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Mono.Cecil.Rocks.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\AsmResolver.PE.File.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Il2CppInterop.HarmonySupport.dll
-C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\WebSocketDotNet.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\MonoMod.Backports.dll
-C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\Microsoft.Diagnostics.NETCore.Client.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\MonoMod.ILHelpers.dll
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\MelonLoader.pdb
 C:\Users\jayde\source\repos\PasteBetween\bin\Debug\net6.0\MelonLoader.xml
@@ -120,6 +119,7 @@ C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\PasteBetween.Generated
 C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\PasteBetween.AssemblyInfoInputs.cache
 C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\PasteBetween.AssemblyInfo.cs
 C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\PasteBetween.csproj.CoreCompileInputs.cache
+C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\PasteBetween.sourcelink.json
 C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\PasteBet.A18FBA51.Up2Date
 C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\PasteBetween.dll
 C:\Users\jayde\source\repos\PasteBetween\obj\Debug\net6.0\refint\PasteBetween.dll

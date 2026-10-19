@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jayde\\source\\repos\\PasteBetween\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{61916D89-6DA7-4C3E-A37B-7035D56143FB}|PasteBetween.csproj|c:\\users\\jayde\\source\\repos\\pastebetween\\core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61916D89-6DA7-4C3E-A37B-7035D56143FB}|PasteBetween.csproj|solutionrelative:core.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Core.cs",
+              "DocumentMoniker": "C:\\Users\\jayde\\source\\repos\\PasteBetween\\Core.cs",
+              "RelativeDocumentMoniker": "Core.cs",
+              "ToolTip": "C:\\Users\\jayde\\source\\repos\\PasteBetween\\Core.cs",
+              "RelativeToolTip": "Core.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T21:47:30.406Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

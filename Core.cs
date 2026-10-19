@@ -1,14 +1,12 @@
-﻿using Il2Cpp;
+﻿using Il2CppSystem.Xml.Linq;
+using Il2Cpp;
 using MelonLoader;
 using MelonLoader.Utils;
-using UnityEngine.SceneManagement;
-using UnityEngine;
-using Il2CppSystem.Xml.Linq;
 using Il2CppSystem.Collections;
 using Il2CppNcp.Game;
 using HarmonyLib;
 
-[assembly: MelonInfo(typeof(PasteBetween.Core), "PasteBetween", "1.0.0", "Jayden", null)]
+[assembly: MelonInfo(typeof(PasteBetween.Core), "PasteBetween", "2.0.0", "Jayden", null)]
 [assembly: MelonGame("Notional Games", "Beltmatic")]
 
 namespace PasteBetween
@@ -16,37 +14,12 @@ namespace PasteBetween
     public class Core : MelonMod
     {
         private readonly string filepath = Path.Combine(MelonEnvironment.UserDataDirectory, "Clipboard.txt");
-        public GameManager gameManager;
-        public Il2CppSystem.Collections.Generic.List<Blueprint> clipboardHistory;
+        public Il2CppSystem.Collections.Generic.List<Blueprint> clipboardHistory = new();
         private bool loaded = false;
-        public override void OnInitializeMelon()
-        {
-            LoggerInstance.Msg("Initialized.");
-            clipboardHistory = new();
-        }
-
-        public override void OnSceneWasLoaded(int buildIndex, string sceneName)
-        {
-            GameObject dummy = new();
-            UnityEngine.Object.DontDestroyOnLoad(dummy);
-            Scene ddolScene = dummy.scene;
-            UnityEngine.Object.Destroy(dummy);
-            GameObject gameManagerGO = null;
-            var rootObjects = ddolScene.GetRootGameObjects();
-            foreach (var GO in rootObjects)
-            {
-                if (GO != null && GO.name == "GameManager")
-                {
-                    gameManagerGO = GO;
-                    break;
-                }
-            }
-            gameManager = gameManagerGO.GetComponent<GameManager>();
-        }
 
         public override void OnUpdate()
         {
-            if (gameManager?.demoSimulation != null && !loaded)
+            if (GameManager.Instance?.AnySimulation != null && !loaded)
             {
                 if (File.Exists(filepath))
                 {
@@ -54,7 +27,7 @@ namespace PasteBetween
                     var enumerator = rootElement.Elements().GetEnumerator().Cast<IEnumerator>();
                     while (enumerator.MoveNext())
                     {
-                        Blueprint blueprint = Blueprint.Deserialize(gameManager.demoSimulation.Cast<ISimulation>(), enumerator.Current.Cast<XElement>());
+                        Blueprint blueprint = Blueprint.Deserialize(GameManager.Instance.AnySimulation.Cast<ISimulation>(), enumerator.Current.Cast<XElement>());
                         if (blueprint != null)
                         {
                             clipboardHistory.Add(blueprint);
@@ -63,7 +36,7 @@ namespace PasteBetween
 
                     loaded = true;
 
-                    gameManager.simulationData.ClipboardHistory = clipboardHistory;
+                    GameManager.Instance.simulationData.ClipboardHistory = clipboardHistory;
                 }
             }
         }
@@ -71,7 +44,7 @@ namespace PasteBetween
         public override void OnDeinitializeMelon()
         {
             XElement rootElement = new((XName)"Root");
-            foreach (Blueprint blueprint in gameManager.simulationData.ClipboardHistory)
+            foreach (Blueprint blueprint in GameManager.Instance.simulationData.ClipboardHistory)
             {
                 XElement serializedBlueprint = blueprint.Serialize();
                 if (serializedBlueprint != null)
@@ -91,8 +64,9 @@ namespace PasteBetween
         {
             if (name == "NewGame")
             {
-                Melon<Core>.Instance.clipboardHistory = Melon<Core>.Instance.gameManager.simulationData.ClipboardHistory;
+                Melon<Core>.Instance.clipboardHistory = GameManager.Instance.simulationData.ClipboardHistory;
             }
+
             return true;
         }
 
@@ -100,7 +74,7 @@ namespace PasteBetween
         {
             if (name == "NewGame" || name == "Continue")
             {
-                Melon<Core>.Instance.gameManager.simulationData.ClipboardHistory = Melon<Core>.Instance.clipboardHistory;
+                GameManager.Instance.simulationData.ClipboardHistory = Melon<Core>.Instance.clipboardHistory;
             }
         }
     }
@@ -112,8 +86,9 @@ namespace PasteBetween
         {
             if (name == "Load")
             {
-                Melon<Core>.Instance.clipboardHistory = Melon<Core>.Instance.gameManager.simulationData.ClipboardHistory;
+                Melon<Core>.Instance.clipboardHistory = GameManager.Instance.simulationData.ClipboardHistory;
             }
+
             return true;
         }
 
@@ -121,7 +96,7 @@ namespace PasteBetween
         {
             if (name == "Load")
             {
-                Melon<Core>.Instance.gameManager.simulationData.ClipboardHistory = Melon<Core>.Instance.clipboardHistory;
+                GameManager.Instance.simulationData.ClipboardHistory = Melon<Core>.Instance.clipboardHistory;
             }
         }
     }
